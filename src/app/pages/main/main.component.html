@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="panel" id="panel">
+      <div class="todo-main">
+        <h1>TODO LIST</h1>
+        <div class="row row-reverse">
+          <button (click)="createTask()" id="new-task" class="new-task">+</button>
+        </div>
+      </div>
+      <div class="list">
+        <div *ngFor="let task of tasks" class="task" [ngClass]="{ 'completed': task.completed }" id="{{'task-'+task.id}}">
+          <div class="content">
+            <p class="title">{{ task.title }}</p>
+            <p class="description">{{ task.name }}</p>
+          </div>
+          <div class="container-buttons">
+            <button (click)="edit(task.id)"><img src="/assets/icons/edit.png"></button>
+            <button *ngIf="!task.completed" (click)="completed(task.id, true)"><img src="/assets/icons/check.png"></button>
+            <button *ngIf="task.completed" class="incomplete" (click)="incomplete(task.id, false)"><img src="/assets/icons/undo.png"></button>
+            <button (click)="deleteTaskAnimation(task.id)"><img src="/assets/icons/trash.png"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

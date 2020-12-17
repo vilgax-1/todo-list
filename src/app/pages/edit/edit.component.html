@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>EDIT TASK</h1>
+  <form [formGroup]="form" class="card">
+    <div class="box">
+      <label>Titulo</label>
+      <input maxlength="50" formControlName="title"
+      [ngClass]="{'invalid': form.get('title').errors && form.get('title').touched}">
+    </div>
+    <div class="box">
+      <label>Descripción</label>
+      <textarea maxlength="50" formControlName="name"
+      [ngClass]="{'invalid': form.get('name').errors && form.get('name').touched}"></textarea>
+    </div>
+    <button id="send" (click)="update()">SEND</button>
+  </form>
+  <button class="back" (click)="back()"><img src="/assets/icons/go-back-arrow.png"></button>
+</div>

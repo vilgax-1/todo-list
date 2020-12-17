@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>CREATE TASK</h1>
+  <div class="card-contain">
+    <form [formGroup]="form" class="card">
+      <div class="box">
+        <label>Title</label>
+        <input maxlength="50" formControlName="title"
+        [ngClass]="{'invalid': form.get('title').errors && form.get('title').touched}">
+      </div>
+      <div class="box">
+        <label>Description</label>
+        <textarea maxlength="50" formControlName="name"
+        [ngClass]="{'invalid': form.get('name').errors && form.get('name').touched}"></textarea>
+      </div>
+      <button id="send" (click)="submit()">SEND</button>
+    </form>
+    <div class="error">
+      <p>Llena los campos que estan en rojo</p>
+    </div>
+  </div>
+  <button class="back" (click)="back()"><img src="/assets/icons/go-back-arrow.png"></button>
+</div>

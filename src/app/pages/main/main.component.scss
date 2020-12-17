@@ -1,0 +1,150 @@
+.container{
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel{
+  width: 60%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  position: relative;
+}
+
+.todo-main{
+  width: 100%;
+  h1{
+    font-size: 150px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .new-task{
+    position: relative;
+    float: right;
+    border: none;
+    font-weight: bold;
+    background: #F6EE65;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    outline: none;
+    z-index: 2;
+  }
+}
+
+.list{
+  margin-top: 25px;
+  width: 100%;
+  transition: all 0.5s;
+}
+
+.task{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  width: calc(100% - 30px);
+  height: 50px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px 3px rgba($color: #000000, $alpha: .25);
+  margin-bottom: 10px;
+
+  .content{
+    width: auto;
+    .title{
+      margin: 0;
+      font-size: 20px;
+    }
+    .description{
+      font-size: 16px;
+      color: rgba($color: #000000, $alpha: .75);
+      margin: 0;
+    }
+  }
+
+  .container-buttons{
+    width: auto;
+    height: inherit;
+    display: flex;
+    align-items: center;
+
+    button{
+      background: transparent;
+      border: none;
+      width: 25px;
+      height: 25px;
+      margin-right: 25px;
+      outline: none;
+      img{
+        width: inherit;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &.completed{
+    background: rgba($color: #ffffff, $alpha: .75);
+    transform: scale(.95);
+  }
+}
+
+@media (max-width: 1360px){
+  .todo-main h1{
+    font-size: 120px;
+  }
+}
+
+@media (max-width: 1200px){
+  .todo-main h1{
+    font-size: 100px;
+  }
+}
+
+@media (max-width: 900px){
+  .panel{
+    width: 80%;
+  }
+}
+
+@media (max-width: 670px){
+  .panel{
+    width: 90%;
+  }
+}
+
+@media (max-width: 500px){
+  .todo-main h1{
+    font-size: 60px;
+  }
+
+  .task {
+    height: auto;
+    .content{
+      .title{
+        font-size: 17px;
+      }
+      .description{
+        font-size: 14px;
+      }
+    }
+
+    .container-buttons > button:last-child{
+      margin-right: 10px;
+    }
+  }
+}
+
+@media (max-width: 350px){
+  .todo-main h1{
+    font-size: 50px;
+  }
+}
